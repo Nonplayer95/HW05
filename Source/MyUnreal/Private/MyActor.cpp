@@ -36,5 +36,20 @@ int32 AMyActor::step()
 
 void AMyActor::move()
 {
+	FVector2D CurrentPosition = start;
+
+	UE_LOG(LogTemp, Warning, TEXT("(%.0f, %.0f)"), CurrentPosition.X, CurrentPosition.Y);
+	for (int32 i = 1; i <= 10; i++)
+	{
+		int32 MoveX = step();
+		int32 MoveY = step();
+
+		CurrentPosition.X += MoveX;
+		CurrentPosition.Y += MoveY;
+
+		UE_LOG(LogTemp,Warning,TEXT)
+
+	}
 
 }
+
