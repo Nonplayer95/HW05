@@ -18,7 +18,7 @@ void AMyActor::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	UE_LOG(LogTemp, Warning, TEXT("== MyActor가 스폰되었습니다! 랜덤 이동을 시작합니다 =="));
+	UE_LOG(LogTemp, Warning, TEXT("= MyActor가 스폰되었습니다! 랜덤 이동을 시작합니다 ="));
 	move();
 }
 
@@ -47,9 +47,10 @@ void AMyActor::move()
 		CurrentPosition.X += MoveX;
 		CurrentPosition.Y += MoveY;
 
-		UE_LOG(LogTemp,Warning,TEXT)
-
+		UE_LOG(LogTemp,Warning,TEXT("Step %d: (%.0f,%.0f)<-X이동:%d, Y이동:%d"),
+			i, CurrentPosition.X, CurrentPosition.Y, MoveX, MoveY);
 	}
-
+	UE_LOG(LogTemp, Warning, TEXT("== 10회 이동 완료! 최종 좌표: (%.0f,%.0f)=="),
+		CurrentPosition.X, CurrentPosition.Y);
 }
 
